@@ -2,14 +2,16 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const Groq = require("groq-sdk");
+const cors = require("cors")
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors())
 
 // Path of dist folder
-const distPath = path.resolve(__dirname, "../../Client/dist");
+// const distPath = path.resolve(__dirname, "../../Client/dist");
 
 // Groq client
 const client = new Groq({
@@ -160,11 +162,11 @@ ${JSON.stringify(
 });
 
 // Serve frontend
-app.use(express.static(distPath));
+// app.use(express.static(distPath));
 
-app.get(/.*/, (req, res) => {
-    res.sendFile(path.resolve(distPath, "index.html"));
-});
+// app.get(/.*/, (req, res) => {
+//     res.sendFile(path.resolve(distPath, "index.html"));
+// });
 
 // Start server
 app.listen(PORT, () => {
