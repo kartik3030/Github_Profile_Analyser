@@ -1,21 +1,11 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./src/Main.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "type": "commonjs",
-  "dependencies": {
-    "cors": "^2.8.6",
-    "dotenv": "^17.3.1",
-    "express": "^5.2.1",
-    "groq-sdk": "^1.1.1",
-    "nodemon": "^3.1.14"
+  "scripts": {
+    "start": "node ./src/Main.js",
+    "dev": "nodemon ./src/Main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
